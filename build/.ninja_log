@@ -29,3 +29,5 @@
 35848	46602	7906328783360689	Release/FractalMPI.exe	3ce164d245be9aa7
 40828	49954	7906328833196362	Release/fractal.exe	56226b79708af55
 42200	50702	7906328846900491	Release/fractal_colectiva.exe	a10ffe983a7f88b7
+120	25066	7906409773154857	CMakeFiles/fractal_colectiva.dir/Release/main_fractal_colectiva.cpp.obj	c3f057baa5bc1f37
+25070	33604	7906410022615469	Release/fractal_colectiva.exe	a10ffe983a7f88b7

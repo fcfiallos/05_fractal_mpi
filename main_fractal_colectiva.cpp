@@ -130,9 +130,9 @@ void set_ui()
         }
         // notificar
         int32_t data[2];
-        data[0] = running;
-        data[1] = max_iterations;
-        MPI_Bcast(data, 2, MPI_INT, 0, MPI_COMM_WORLD);
+        data[0] = running;                              // guarda la accion en vez de iniciar el bool con true
+        data[1] = max_iterations;                       // asigan el numero de iteraciones que va dibujar el fractal
+        MPI_Bcast(data, 2, MPI_INT, 0, MPI_COMM_WORLD); // envia el dato o los bloques de datos a todos los procesos
         if (running == false)
         {
             break;
@@ -140,21 +140,27 @@ void set_ui()
         julia_mpi(x_min, y_min, x_max, y_max, row_start, row_end, pixel_buffer);
         dibujar_texto_rank();
 
-        // Esperar a que TODOS los procesos terminen de calcular
+        // este nos ayudara a todos terminen para continuar con los otroas procesos en cola
         MPI_Barrier(MPI_COMM_WORLD);
 
-        // GATHER: Todos los procesos envían sus datos a Rank 0
+        // segun la teoria en clases para enviar y recibir se usa el metodo gather
+        // con este metdod cambiamos todo el proceso y condicionales para asegurarmos de que se reviben (Recv) todos los datos en el rank 0
         MPI_Gather(
-            pixel_buffer,                      // buffer a enviar (cada proceso envía su parte)
-            WIDTH * delta * sizeof(uint32_t),  // tamaño que envía cada proceso
-            MPI_BYTE,                          // tipo de dato
-            texture_buffer,                    // buffer de recepción (solo usado en Rank 0)
-            WIDTH * delta * sizeof(uint32_t),  // tamaño a recibir de cada proceso
-            MPI_BYTE,                          // tipo de dato
-            0,                                 // proceso raíz (Rank 0)
-            MPI_COMM_WORLD);                   // comunicador
-        
-        // Actualizar la textura con los nuevos datos calculados
+            pixel_buffer,
+            WIDTH * delta * sizeof(uint32_t),
+            MPI_BYTE,
+            texture_buffer,
+            WIDTH * delta * sizeof(uint32_t),
+            MPI_BYTE,
+            0,
+            MPI_COMM_WORLD);
+        // buffer recibir
+        // cantidad de recibir
+        // tipo que envio de dato
+        // donde voy a recibir
+        // cuantos espero enviar
+        // y quien esta manejado
+
         texture.update((const uint8_t *)texture_buffer);
 
         // contar FPS
@@ -222,20 +228,18 @@ int main(int argc, char **argv)
 
             julia_mpi(x_min, y_min, x_max, y_max, row_start, row_end, pixel_buffer);
             dibujar_texto_rank();
-            
-            // Esperar a que TODOS los procesos terminen de calcular
+
             MPI_Barrier(MPI_COMM_WORLD);
 
-            // GATHER: Enviar datos a Rank 0
             MPI_Gather(
-                pixel_buffer,                      // buffer a enviar (cada proceso envía su parte)
-                WIDTH * delta * sizeof(uint32_t),  // tamaño que envía este proceso
-                MPI_BYTE,                          // tipo de dato
-                nullptr,                           // no recibe nada (rank != 0)
-                WIDTH * delta * sizeof(uint32_t),  // tamaño a recibir de cada proceso
-                MPI_BYTE,                          // tipo de dato
-                0,                                 // proceso raíz (Rank 0)
-                MPI_COMM_WORLD);                   // comunicador
+                pixel_buffer,
+                WIDTH * delta * sizeof(uint32_t),
+                MPI_BYTE,
+                nullptr,
+                WIDTH * delta * sizeof(uint32_t),
+                MPI_BYTE,
+                0,
+                MPI_COMM_WORLD);
         }
     }
 
