@@ -1,0 +1,202 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FractalMPI",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FractalMPI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FractalMPI-Debug-67b041f01a7608d5dcd7.json",
+					"name" : "FractalMPI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fractal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fractal-Debug-f03d809a1144a3016fd2.json",
+					"name" : "fractal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fractal_colectiva::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fractal_colectiva-Debug-014126209939374ce416.json",
+					"name" : "fractal_colectiva",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FractalMPI",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FractalMPI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FractalMPI-Release-771d0f42bacbf23c82a2.json",
+					"name" : "FractalMPI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fractal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fractal-Release-9b808d0298280f9f933b.json",
+					"name" : "fractal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fractal_colectiva::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fractal_colectiva-Release-26f50a2892b761604035.json",
+					"name" : "fractal_colectiva",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FractalMPI",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "FractalMPI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FractalMPI-RelWithDebInfo-15d49fd9166bfb41938e.json",
+					"name" : "FractalMPI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fractal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fractal-RelWithDebInfo-531a1823732dda100e61.json",
+					"name" : "fractal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fractal_colectiva::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fractal_colectiva-RelWithDebInfo-6e8fb31079e8f6cc2fcd.json",
+					"name" : "fractal_colectiva",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/tools/Proyectos/05_fractal_mpi/build",
+		"source" : "C:/tools/Proyectos/05_fractal_mpi"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}
